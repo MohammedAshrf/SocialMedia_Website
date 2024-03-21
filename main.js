@@ -171,7 +171,10 @@ function login() {
       location.reload();
     })
     .catch((error) => {
-      console.log(error);
+      console.log(error.response.data.message);
+      let message = error.response.data.message;
+      document.getElementById("login-error").style.display = "block";
+      document.getElementById("login-error").innerHTML = message;
     });
   // console.log(username, password);
 }
