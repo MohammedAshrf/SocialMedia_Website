@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../main.css">
+    <title>Post Details</title>
+</head>
+
+<body>
+    <!-- <p>Hi</p> -->
+    <!-- === Start loader -->
+    <div id="loader">
+        <div class="loader"></div>
+    </div>
+    <!-- === End loader -->
+
+    <!-- === Start modals === -->
+    <!-- Start Log in modal -->
+    <div class="modal fade" id="login-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Log in</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="username" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="password" value="">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="login()">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Log in modal -->
+    <!-- Start register modal -->
+    <div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Username:</label>
+                            <input type="text" class="form-control" id="reg-username" value="">
+                            <span class="error" id="error">error</span>
+                        </div>
+                        <div class="mb-3">
+                            <label for="recipient-name" class="col-form-label">Name:</label>
+                            <input type="text" class="form-control" id="name" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Password:</label>
+                            <input type="password" class="form-control" id="reg-password" value="">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Profile image:</label>
+                            <input type="file" class="form-control" id="register-image">
+                            <span class="error" id="register-image-error">error</span>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="register()">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End register modal -->
+    <!-- Start login or reg post modal -->
+    <div class="modal fade" id="login-or-reg-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" id="login-or-reg-modal-dialog">
+            <div class="modal-content" id="login-or-reg-modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">You're not logged in</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer" id="login-or-reg-modal-footer">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#register-modal"
+                        class="btn btn-outline-success me-3">Register</button>
+                    <b>Or</b>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#login-modal"
+                        class="btn btn-outline-success">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End login or reg post modal -->
+    <!-- === End modals === -->
+
+    <!-- Start Navigation bar -->
+    <div class="container" id="nav-bar"></div>
+    <!-- End Navigation bar -->
+    <!-- Start main content -->
+    <div style="height: 1000px;" class="container">
+        <!-- Start user's posts -->
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-9">
+                <h1>
+                    <span id="username-span">Mohamed</span>
+                    Post
+                </h1>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="col-9" id="post-card">
+                <div class="card shadow my-3">
+                    <div class="card-header">
+                        <img class="rounded-circle border border-1" style="width: 50px; height: 50px;"
+                            src="./imgs/avatar-1.jfif" alt="image">
+                        <b>@mhmdashrf</b>
+                    </div>
+                    <div class="card-body">
+                        <img class="w-100" src="./imgs/background-post-1.jfif" alt="image">
+                        <h6 style="color: rgb(160, 160, 160);">2 min ago</h6>
+                        <h5>Hello world</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id soluta distinctio sapiente
+                            numquam in quo sed officia placeat? Iusto, culpa ratione. Excepturi alias at ab
+                            laudantium labore aut atque vel?</p>
+                        <hr>
+                        <div class="comments">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-pen" viewBox="0 0 16 16">
+                                <path
+                                    d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z" />
+                            </svg>
+                            <span>(3) comments</span>
+                        </div>
+                    </div>
+                    <!-- Start comments -->
+                    <div id="comments">
+                        <div class="p-3" style="background-color: rgb(187, 187, 187);">
+                            <div>
+                                <img src="./imgs/avatar-1.jfif" class="rounded-circle"
+                                    style="width: 40px; height: 40px;" alt="image">
+                                <b>@mohamed_ashraf</b>
+                            </div>
+                            <div class="mt-3 ms-3">
+                                this is really gorgious
+                            </div>
+                        </div>
+                        <div class="add-comment-container">
+                            <input type="text" id="add-comment" placeholder="new comment">
+                            <div>Add</div>
+                        </div>
+                    </div>
+                    <!-- End comments -->
+                </div>
+            </div>
+        </div>
+        <!-- End user's post -->
+    </div>
+    <!-- End main content -->
+    <!-- == Scripts == -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/axios/dist/axios.min.js"></script>
+    <script src="../main.js"></script>
+    <script src="./postDetails.js"></script>
+</body>
+
+</html>
