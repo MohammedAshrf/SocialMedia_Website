@@ -435,7 +435,7 @@ function goToProfile(userId) {
 function profileClicked() {
   let currentUser = getCurrentUser();
   console.log(currentUser);
-  window.location = `/profile page/profile.html?userId=${currentUser.id}`;
+  window.location = `./profile page/profile.html?userId=${currentUser.id}`;
 }
 
 function toggleLoader(show = true) {
