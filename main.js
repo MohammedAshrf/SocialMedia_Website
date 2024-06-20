@@ -54,7 +54,7 @@ let navBar = `
   `;
 document.getElementById("nav-bar").innerHTML = navBar;
 function homePage() {
-  window.location = `index.html`;
+  window.location = `#/`;
 }
 // == End Dynamic nav-bar == //
 
@@ -429,13 +429,13 @@ function deletePostConfirm() {
 }
 
 function goToProfile(userId) {
-  window.location = `#/profile page/profile.html?userId=${userId}`;
+  window.location = `#/profile.html?userId=${userId}`;
 }
 
 function profileClicked() {
   let currentUser = getCurrentUser();
   console.log(currentUser);
-  window.location = `#/profile page/profile.html?userId=${currentUser.id}`;
+  window.location = `#/profile.html?userId=${currentUser.id}`;
 }
 
 function toggleLoader(show = true) {
