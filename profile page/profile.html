@@ -28,11 +28,11 @@
                     <form>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Username:</label>
-                            <input type="text" class="form-control" id="username" value="mohamed_3693">
+                            <input type="text" class="form-control" id="username" value="">
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Password:</label>
-                            <input type="password" class="form-control" id="password" value="HelloWorld">
+                            <input type="password" class="form-control" id="password" value="">
                         </div>
                     </form>
                 </div>
@@ -56,21 +56,17 @@
                     <form>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Username:</label>
-                            <input type="text" class="form-control" id="reg-username" value="mohamed_369">
+                            <input type="text" class="form-control" id="reg-username" value="">
                             <span class="error" id="error">error</span>
                         </div>
                         <div class="mb-3">
                             <label for="recipient-name" class="col-form-label">Name:</label>
-                            <input type="text" class="form-control" id="name" value="Mohamed">
+                            <input type="text" class="form-control" id="name" value="">
                         </div>
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Password:</label>
-                            <input type="password" class="form-control" id="reg-password" value="HelloWorld">
+                            <input type="password" class="form-control" id="reg-password" value="">
                         </div>
-                        <!-- <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Re-write Password:</label>
-                                    <input type="password" class="form-control" id="re-reg-password" value="HelloWorld">
-                                </div> -->
                         <div class="mb-3">
                             <label for="message-text" class="col-form-label">Profile image:</label>
                             <input type="file" class="form-control" id="register-image">
@@ -137,11 +133,32 @@
         </div>
     </div>
     <!-- End Delete post modal -->
+    <!-- Start login or reg post modal -->
+    <div class="modal fade" id="login-or-reg-post-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" id="login-or-reg-modal-dialog">
+            <div class="modal-content" id="login-or-reg-modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">You're not logged in</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer" id="login-or-reg-modal-footer">
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#register-modal"
+                        class="btn btn-outline-success me-3">Register</button>
+                    <b>Or</b>
+                    <button type="button" data-bs-toggle="modal" data-bs-target="#login-modal"
+                        class="btn btn-outline-success">Log in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End login or reg post modal -->
     <!-- === End modals === -->
 
-    <!-- Start Navigation bar -->
+    <!-- === Start Navigation bar === -->
     <div class="container" id="nav-bar"></div>
-    <!-- End Navigation bar -->
+    <!-- === End Navigation bar === -->
+
     <!-- Start main content -->
     <div style="height: 1000px;" class="container">
         <!-- Start Profile page -->
