@@ -54,7 +54,7 @@ let navBar = `
   `;
 document.getElementById("nav-bar").innerHTML = navBar;
 function homePage() {
-  window.location = `/`;
+  window.location = `index.html`;
 }
 // == End Dynamic nav-bar == //
 
@@ -342,7 +342,7 @@ const appendAlert = (message, type, fadeOrShow) => {
 // == Start postDetails page == //
 function clickedPost(postId) {
   // alert(postId);
-  window.location = `../post details page/postDetails.html?postId=${postId}`;
+  window.location = `./postDetails.html?postId=${postId}`;
 }
 // == End postDetails page == //
 
