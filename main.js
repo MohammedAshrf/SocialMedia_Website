@@ -54,7 +54,7 @@ let navBar = `
   `;
 document.getElementById("nav-bar").innerHTML = navBar;
 function homePage() {
-  window.location = `index.html`;
+  window.location = `./index.html`;
 }
 // == End Dynamic nav-bar == //
 
